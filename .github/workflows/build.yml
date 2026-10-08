@@ -2288,6 +2288,31 @@ jobs:
 
           echo "✓ Networking配置完成"
 
+      - name: Extra configs
+        if: ${{ inputs.use_networking }}
+        working-directory: ${{ env.KERNEL_ROOT }}/common
+        run: |
+          set -euo pipefail
+
+          ensure_defconfig_value() {
+            local cfg="$1"
+            local value="$2"
+            local line="${cfg}=${value}"
+
+            if grep -qxF "$line" "$DEFCONFIG"; then
+              return 0
+            fi
+
+            if grep -Eq "^${cfg}=|^# ${cfg} is not set$" "$DEFCONFIG"; then
+              sed -i -E "s|^${cfg}=.*|${line}|; s|^# ${cfg} is not set$|${line}|" "$DEFCONFIG"
+            else
+              echo "$line" >> "$DEFCONFIG"
+            fi
+          }
+
+          echo "Extra configs"
+          ensure_defconfig_value CONFIG_BLK_DEV_NBD y
+
       - name: 克隆虚拟化支持补丁仓库
         if: inputs.virtualization_support != 'off'
         run: |
