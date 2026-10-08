@@ -2255,10 +2255,14 @@ jobs:
           ensure_defconfig_value CONFIG_NETFILTER_XT_SET y
           ensure_defconfig_value CONFIG_IP6_NF_NAT y
           ensure_defconfig_value CONFIG_IP6_NF_TARGET_MASQUERADE y
+          ensure_defconfig_value CONFIG_NETFILTER_XT_TARGET_HL y
+          
           if [ "${{ inputs.kernel_version }}" = "5.10" ]; then
             echo "应用 5.10 特殊配置 "
             sed -i 's/CONFIG_IP_SET_MAX/65534/g' net/netfilter/ipset/ip_set_core.c
           fi
+
+          exit 0
 
           echo " 添加 TCP Congestion Control (BBR) 支持"
           # 应用 BBRv3 补丁仅有6.1版本
