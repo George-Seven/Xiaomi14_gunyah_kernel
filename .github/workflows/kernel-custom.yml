@@ -23,15 +23,15 @@ on:
           - "6.1"
         default: "6.1"
       sub_level:
-        description: "子版本号 (如 138)"
+        description: "子版本号 (如 57)"
         required: true
         type: string
-        default: "138"
+        default: "57"
       os_patch_level:
-        description: "安全补丁级别 (如 2025-06)"
+        description: "安全补丁级别 (如 2024-01)"
         required: true
         type: string
-        default: "2025-06"
+        default: "2024-01"
       revision:
         description: "修订版本"
         required: false
@@ -48,7 +48,7 @@ on:
           - Official
           - SukiSU
           - ReSukiSU
-        default: Official
+        default: None
       kernelsu_branch:
         description: "KSU 分支"
         required: true
@@ -115,7 +115,7 @@ on:
         description: "启用 NTsync"
         required: false
         type: boolean
-        default: false
+        default: true
       use_networking:
         description: "启用网络增强（IPSet + BBR）"
         required: false
