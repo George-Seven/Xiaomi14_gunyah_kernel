@@ -2203,7 +2203,7 @@ jobs:
           echo "启用 NTsync 补丁"
           echo "应用基础补丁: ntsync_base.patch..."
           #patch -p1 --forward < $KERNEL_PATCHES/common/ntsync/ntsync_base.patch || true
-          wget -O /tmp/ntsync_base.patch https://github.com/WildKernels/kernel_patches/blob/4540f58d80cf187ea56300f6f4a6b3def4ca4412/common/ntsync/ntsync_base.patch
+          wget -O /tmp/ntsync_base.patch https://github.com/WildKernels/kernel_patches/raw/4540f58d80cf187ea56300f6f4a6b3def4ca4412/common/ntsync/ntsync_base.patch
           patch -p1 --forward < /tmp/ntsync_base.patch || true
 
           echo "应用 NTsync time namespace 和 owner 校验补丁..."
