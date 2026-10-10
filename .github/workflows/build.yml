@@ -2353,7 +2353,7 @@ jobs:
           #exit 0
           
           #ensure_defconfig_value CONFIG_CGROUP_DEVICE y
-          #ensure_defconfig_value CONFIG_CGROUP_PERF y
+          #bootloop# ensure_defconfig_value CONFIG_CGROUP_PERF y
           #not found# ensure_defconfig_value CONFIG_CGROUP_HUGETLB y
           #ensure_defconfig_value CONFIG_NET_CLS_CGROUP y
           #ensure_defconfig_value CONFIG_BRIDGE_NETFILTER y
@@ -2371,7 +2371,7 @@ jobs:
           #ensure_defconfig_value CONFIG_NFT_MASQ y
           #not found# ensure_defconfig_value CONFIG_NFT_NAT y
           #ensure_defconfig_value CONFIG_NF_TABLES y
-          ensure_defconfig_value CONFIG_VXLAN y
+          #bootloop# ensure_defconfig_value CONFIG_VXLAN y
           #ensure_defconfig_value CONFIG_BRIDGE_VLAN_FILTERING y
           #bootloop# ensure_defconfig_value CONFIG_IPVLAN y 
           ensure_defconfig_value CONFIG_MACVLAN y
