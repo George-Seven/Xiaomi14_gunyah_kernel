@@ -2372,7 +2372,7 @@ jobs:
           ##ensure_defconfig_value CONFIG_NFT_NAT y
           #ensure_defconfig_value CONFIG_NF_TABLES y
           #ensure_defconfig_value CONFIG_VXLAN y
-          ensure_defconfig_value CONFIG_BRIDGE_VLAN_FILTERING y
+          #ensure_defconfig_value CONFIG_BRIDGE_VLAN_FILTERING y
           ensure_defconfig_value CONFIG_IPVLAN y
           ensure_defconfig_value CONFIG_MACVLAN y
           #ensure_defconfig_value CONFIG_BTRFS_FS y
