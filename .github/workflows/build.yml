@@ -2364,13 +2364,13 @@ jobs:
           #ensure_defconfig_value CONFIG_IP_VS_PROTO_TCP y
           #ensure_defconfig_value CONFIG_IP_VS_PROTO_UDP y
           #ensure_defconfig_value CONFIG_IP_VS_RR y
-          ensure_defconfig_value CONFIG_NFT_CT y
+          #ensure_defconfig_value CONFIG_NFT_CT y
           ##ensure_defconfig_value CONFIG_NFT_FIB y
           ##ensure_defconfig_value CONFIG_NFT_FIB_IPV4 y
           ##ensure_defconfig_value CONFIG_NFT_FIB_IPV6 y
-          ensure_defconfig_value CONFIG_NFT_MASQ y
+          #ensure_defconfig_value CONFIG_NFT_MASQ y
           ##ensure_defconfig_value CONFIG_NFT_NAT y
-          ensure_defconfig_value CONFIG_NF_TABLES y
+          #ensure_defconfig_value CONFIG_NF_TABLES y
           ensure_defconfig_value CONFIG_VXLAN y
           ensure_defconfig_value CONFIG_BRIDGE_VLAN_FILTERING y
           ensure_defconfig_value CONFIG_IPVLAN y
