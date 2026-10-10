@@ -2372,7 +2372,7 @@ jobs:
           #not found# ensure_defconfig_value CONFIG_NFT_NAT y
           #ensure_defconfig_value CONFIG_NF_TABLES y
           #bootloop# ensure_defconfig_value CONFIG_VXLAN y
-          #ensure_defconfig_value CONFIG_BRIDGE_VLAN_FILTERING y
+          ensure_defconfig_value CONFIG_BRIDGE_VLAN_FILTERING y
           #bootloop# ensure_defconfig_value CONFIG_IPVLAN y 
           ensure_defconfig_value CONFIG_MACVLAN y
           ensure_defconfig_value CONFIG_MACVTAP y
