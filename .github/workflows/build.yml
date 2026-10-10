@@ -2358,8 +2358,8 @@ jobs:
           #ensure_defconfig_value CONFIG_NET_CLS_CGROUP y
           #bootloop# ensure_defconfig_value CONFIG_BRIDGE_NETFILTER y
           #ensure_defconfig_value CONFIG_NETFILTER_XT_MATCH_IPVS y
-          #ensure_defconfig_value CONFIG_IP_SCTP y
-          ensure_defconfig_value CONFIG_IP_VS y
+          ensure_defconfig_value CONFIG_IP_SCTP y
+          #ensure_defconfig_value CONFIG_IP_VS y
           #ensure_defconfig_value CONFIG_IP_VS_NFCT y
           #ensure_defconfig_value CONFIG_IP_VS_PROTO_TCP y
           #ensure_defconfig_value CONFIG_IP_VS_PROTO_UDP y
