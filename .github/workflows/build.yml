@@ -2352,7 +2352,7 @@ jobs:
           ensure_defconfig_value CONFIG_BLK_DEV_NBD y
           #exit 0
           
-          #ensure_defconfig_value CONFIG_CGROUP_DEVICE y
+          ensure_defconfig_value CONFIG_CGROUP_DEVICE y
           #bootloop# ensure_defconfig_value CONFIG_CGROUP_PERF y
           #not found# ensure_defconfig_value CONFIG_CGROUP_HUGETLB y
           #ensure_defconfig_value CONFIG_NET_CLS_CGROUP y
