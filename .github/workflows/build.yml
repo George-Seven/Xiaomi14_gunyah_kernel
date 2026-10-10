@@ -2356,7 +2356,7 @@ jobs:
           #bootloop# ensure_defconfig_value CONFIG_CGROUP_PERF y
           #not found# ensure_defconfig_value CONFIG_CGROUP_HUGETLB y
           #ensure_defconfig_value CONFIG_NET_CLS_CGROUP y
-          #ensure_defconfig_value CONFIG_BRIDGE_NETFILTER y
+          ensure_defconfig_value CONFIG_BRIDGE_NETFILTER y
           #ensure_defconfig_value CONFIG_NETFILTER_XT_MATCH_IPVS y
           #ensure_defconfig_value CONFIG_IP_SCTP y
           #ensure_defconfig_value CONFIG_IP_VS y
@@ -2370,7 +2370,7 @@ jobs:
           #not found# ensure_defconfig_value CONFIG_NFT_FIB_IPV6 y
           #ensure_defconfig_value CONFIG_NFT_MASQ y
           #not found# ensure_defconfig_value CONFIG_NFT_NAT y
-          ensure_defconfig_value CONFIG_NF_TABLES y
+          #ensure_defconfig_value CONFIG_NF_TABLES y
           #bootloop# ensure_defconfig_value CONFIG_VXLAN y
           #ensure_defconfig_value CONFIG_BRIDGE_VLAN_FILTERING y
           #bootloop# ensure_defconfig_value CONFIG_IPVLAN y 
