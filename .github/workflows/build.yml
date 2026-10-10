@@ -2202,11 +2202,49 @@ jobs:
 
           echo "启用 NTsync 补丁"
           echo "应用基础补丁: ntsync_base.patch..."
-          patch -p1 --forward < $KERNEL_PATCHES/common/ntsync/ntsync_base.patch || true
+          #patch -p1 --forward < $KERNEL_PATCHES/common/ntsync/ntsync_base.patch || true
+          wget -O /tmp/ntsync_base.patch https://github.com/WildKernels/kernel_patches/blob/4540f58d80cf187ea56300f6f4a6b3def4ca4412/common/ntsync/ntsync_base.patch
+          patch -p1 --forward < /tmp/ntsync_base.patch || true
+
+          echo "应用 NTsync time namespace 和 owner 校验补丁..."
+          patch -p1 --forward <<'PATCH'
+          diff --git a/drivers/misc/ntsync.c b/drivers/misc/ntsync.c
+          index d572503..8f32434 100644
+          --- a/drivers/misc/ntsync.c
+          +++ b/drivers/misc/ntsync.c
+          @@ -19,6 +19,7 @@
+           #include <linux/sched/signal.h>
+           #include <linux/slab.h>
+           #include <linux/spinlock.h>
+          +#include <linux/time_namespace.h>
+           #include <uapi/linux/ntsync.h>
+           #include <linux/delay.h>
+           #include <linux/workqueue.h>
+          @@ -857,6 +858,8 @@ static int ntsync_schedule(const struct ntsync_q *q, const struct ntsync_wait_ar
+
+           	if (args->flags & NTSYNC_WAIT_REALTIME)
+           		clock = CLOCK_REALTIME;
+          +	else
+          +		timeout = timens_ktime_to_host(clock, timeout);
+
+           	do {
+           		if (signal_pending(current)) {
+          @@ -893,6 +896,9 @@ static int setup_wait(struct ntsync_device *dev,
+           	if (args->pad || (args->flags & ~NTSYNC_WAIT_REALTIME))
+           		return -EINVAL;
+
+          +	if (!args->owner)
+          +		return -EINVAL;
+          +
+           	if (size >= sizeof(fds))
+           		return -EINVAL;
+          PATCH
+
           # 根据 Android 版本和 Kernel 版本应用对应的兼容性补丁
           PATCH_FILE="$KERNEL_PATCHES/common/ntsync/ntsync_compat_${{ inputs.android_version }}-${{ inputs.kernel_version }}.patch"
           echo "应用版本补丁: ntsync_compat_${{ inputs.android_version }}-${{ inputs.kernel_version }}.patch"
           patch -p1 --forward < "$PATCH_FILE" || true
+
           ensure_defconfig_value CONFIG_NTSYNC y
           echo "应用 NTsync 补丁完成"
 
@@ -2312,6 +2350,8 @@ jobs:
 
           echo "Extra configs"
           ensure_defconfig_value CONFIG_BLK_DEV_NBD y
+          exit 0
+          
           ensure_defconfig_value CONFIG_CGROUP_DEVICE y
           ensure_defconfig_value CONFIG_CGROUP_PERF y
           #ensure_defconfig_value CONFIG_CGROUP_HUGETLB y
