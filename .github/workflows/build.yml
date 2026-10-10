@@ -2352,31 +2352,31 @@ jobs:
           ensure_defconfig_value CONFIG_BLK_DEV_NBD y
           #exit 0
           
-          #ensure_defconfig_value CONFIG_CGROUP_DEVICE y
-          #ensure_defconfig_value CONFIG_CGROUP_PERF y
+          ensure_defconfig_value CONFIG_CGROUP_DEVICE y
+          ensure_defconfig_value CONFIG_CGROUP_PERF y
           ##ensure_defconfig_value CONFIG_CGROUP_HUGETLB y
           #ensure_defconfig_value CONFIG_NET_CLS_CGROUP y
           ensure_defconfig_value CONFIG_BRIDGE_NETFILTER y
           #ensure_defconfig_value CONFIG_NETFILTER_XT_MATCH_IPVS y
-          #ensure_defconfig_value CONFIG_IP_SCTP y
-          #ensure_defconfig_value CONFIG_IP_VS y
-          #ensure_defconfig_value CONFIG_IP_VS_NFCT y
-          #ensure_defconfig_value CONFIG_IP_VS_PROTO_TCP y
-          #ensure_defconfig_value CONFIG_IP_VS_PROTO_UDP y
-          #ensure_defconfig_value CONFIG_IP_VS_RR y
-          #ensure_defconfig_value CONFIG_NFT_CT y
+          ensure_defconfig_value CONFIG_IP_SCTP y
+          ensure_defconfig_value CONFIG_IP_VS y
+          ensure_defconfig_value CONFIG_IP_VS_NFCT y
+          ensure_defconfig_value CONFIG_IP_VS_PROTO_TCP y
+          ensure_defconfig_value CONFIG_IP_VS_PROTO_UDP y
+          ensure_defconfig_value CONFIG_IP_VS_RR y
+          ensure_defconfig_value CONFIG_NFT_CT y
           ##ensure_defconfig_value CONFIG_NFT_FIB y
           ##ensure_defconfig_value CONFIG_NFT_FIB_IPV4 y
           ##ensure_defconfig_value CONFIG_NFT_FIB_IPV6 y
-          #ensure_defconfig_value CONFIG_NFT_MASQ y
+          ensure_defconfig_value CONFIG_NFT_MASQ y
           ##ensure_defconfig_value CONFIG_NFT_NAT y
-          #ensure_defconfig_value CONFIG_NF_TABLES y
+          ensure_defconfig_value CONFIG_NF_TABLES y
           ensure_defconfig_value CONFIG_VXLAN y
           ensure_defconfig_value CONFIG_BRIDGE_VLAN_FILTERING y
           ensure_defconfig_value CONFIG_IPVLAN y
           ensure_defconfig_value CONFIG_MACVLAN y
-          #ensure_defconfig_value CONFIG_BTRFS_FS y
-          #ensure_defconfig_value CONFIG_BTRFS_FS_POSIX_ACL y
+          ensure_defconfig_value CONFIG_BTRFS_FS y
+          ensure_defconfig_value CONFIG_BTRFS_FS_POSIX_ACL y
 
       - name: 克隆虚拟化支持补丁仓库
         if: inputs.virtualization_support != 'off'
