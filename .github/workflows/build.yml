@@ -2352,14 +2352,14 @@ jobs:
           ensure_defconfig_value CONFIG_BLK_DEV_NBD y
           #exit 0
           
-          #bootloop# ensure_defconfig_value CONFIG_CGROUP_DEVICE y
+          #ensure_defconfig_value CONFIG_CGROUP_DEVICE y
           #bootloop# ensure_defconfig_value CONFIG_CGROUP_PERF y
           #not found# ensure_defconfig_value CONFIG_CGROUP_HUGETLB y
-          #bootloop# ensure_defconfig_value CONFIG_NET_CLS_CGROUP y
+          #ensure_defconfig_value CONFIG_NET_CLS_CGROUP y
           #bootloop# ensure_defconfig_value CONFIG_BRIDGE_NETFILTER y
           #ensure_defconfig_value CONFIG_NETFILTER_XT_MATCH_IPVS y
-          #bootloop# ensure_defconfig_value CONFIG_IP_SCTP y
-          #bootloop# ensure_defconfig_value CONFIG_IP_VS y
+          #ensure_defconfig_value CONFIG_IP_SCTP y
+          #ensure_defconfig_value CONFIG_IP_VS y
           #ensure_defconfig_value CONFIG_IP_VS_NFCT y
           #ensure_defconfig_value CONFIG_IP_VS_PROTO_TCP y
           #ensure_defconfig_value CONFIG_IP_VS_PROTO_UDP y
@@ -2378,6 +2378,7 @@ jobs:
           ensure_defconfig_value CONFIG_MACVTAP y
           ensure_defconfig_value CONFIG_BTRFS_FS y
           ensure_defconfig_value CONFIG_BTRFS_FS_POSIX_ACL y
+          ensure_defconfig_value CONFIG_NFS_FS y
 
       - name: 克隆虚拟化支持补丁仓库
         if: inputs.virtualization_support != 'off'
