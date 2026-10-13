@@ -2380,6 +2380,11 @@ jobs:
           ensure_defconfig_value CONFIG_BTRFS_FS_POSIX_ACL y
           ensure_defconfig_value CONFIG_NFS_FS y
           ensure_defconfig_value CONFIG_NTFS3_FS y
+          ensure_defconfig_value CONFIG_SQUASHFS y
+          ensure_defconfig_value CONFIG_SQUASHFS_ZLIB y
+          ensure_defconfig_value CONFIG_SQUASHFS_LZO y
+          ensure_defconfig_value CONFIG_SQUASHFS_XZ y
+          ensure_defconfig_value CONFIG_SQUASHFS_ZSTD y
 
       - name: 克隆虚拟化支持补丁仓库
         if: inputs.virtualization_support != 'off'
