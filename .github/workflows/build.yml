@@ -2387,7 +2387,12 @@ jobs:
           ensure_defconfig_value CONFIG_SQUASHFS_LZO y
           ensure_defconfig_value CONFIG_SQUASHFS_XZ y
           ensure_defconfig_value CONFIG_SQUASHFS_ZSTD y
-          ensure_defconfig_value CONFIG_CFS_BANDWIDTH y
+          ensure_defconfig_value CONFIG_CHECKPOINT_RESTORE=y
+          ensure_defconfig_value CONFIG_NETFILTER_XT_TARGET_CHECKSUM y
+          ensure_defconfig_value CONFIG_NETLINK_DIAG y
+          ensure_defconfig_value CONFIG_PACKET_DIAG y
+          ensure_defconfig_value CONFIG_UNIX_DIAG y
+          ensure_defconfig_value CONFIG_FHANDLE y
 
       - name: 克隆虚拟化支持补丁仓库
         if: inputs.virtualization_support != 'off'
