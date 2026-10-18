@@ -2387,7 +2387,7 @@ jobs:
           ensure_defconfig_value CONFIG_SQUASHFS_LZO y
           ensure_defconfig_value CONFIG_SQUASHFS_XZ y
           ensure_defconfig_value CONFIG_SQUASHFS_ZSTD y
-          #ensure_defconfig_value CONFIG_CHECKPOINT_RESTORE y
+          ensure_defconfig_value CONFIG_CHECKPOINT_RESTORE y
           #ensure_defconfig_value CONFIG_NETFILTER_XT_TARGET_CHECKSUM y
           ensure_defconfig_value CONFIG_NETLINK_DIAG y
           ensure_defconfig_value CONFIG_PACKET_DIAG y
