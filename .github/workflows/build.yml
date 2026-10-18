@@ -2397,6 +2397,9 @@ jobs:
           ensure_defconfig_value CONFIG_NFS_V3_ACL y
           ensure_defconfig_value CONFIG_NTFS3_FS_POSIX_ACL y
           #ensure_defconfig_value CONFIG_NF_TABLES y
+          ensure_defconfig_value CONFIG_MEMCG_SWAP y
+          ensure_defconfig_value CONFIG_MEMCG_SWAP_ENABLED y
+          
 
       - name: 克隆虚拟化支持补丁仓库
         if: inputs.virtualization_support != 'off'
