@@ -2393,6 +2393,9 @@ jobs:
           ensure_defconfig_value CONFIG_PACKET_DIAG y
           ensure_defconfig_value CONFIG_UNIX_DIAG y
           ensure_defconfig_value CONFIG_FHANDLE y
+          ensure_defconfig_value CONFIG_FANOTIFY y
+          ensure_defconfig_value CONFIG_NFS_V3_ACL y
+          ensure_defconfig_value CONFIG_NTFS3_FS_POSIX_ACL y
 
       - name: 克隆虚拟化支持补丁仓库
         if: inputs.virtualization_support != 'off'
