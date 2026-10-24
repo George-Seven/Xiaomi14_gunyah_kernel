@@ -2392,14 +2392,14 @@ jobs:
           #ensure_defconfig_value CONFIG_NETLINK_DIAG y
           #ensure_defconfig_value CONFIG_PACKET_DIAG y
           #ensure_defconfig_value CONFIG_UNIX_DIAG y
-          ensure_defconfig_value CONFIG_FHANDLE y
-          ensure_defconfig_value CONFIG_FANOTIFY y
+          #ensure_defconfig_value CONFIG_FHANDLE y
+          #ensure_defconfig_value CONFIG_FANOTIFY y
           ensure_defconfig_value CONFIG_NFS_V3_ACL y
           ensure_defconfig_value CONFIG_NTFS3_FS_POSIX_ACL y
           #ensure_defconfig_value CONFIG_NF_TABLES y
           #not found#ensure_defconfig_value CONFIG_MEMCG_SWAP y
           #not found#ensure_defconfig_value CONFIG_MEMCG_SWAP_ENABLED y
-          
+          ensure_defconfig_value CONFIG_ISO9660_FS y
 
       - name: 克隆虚拟化支持补丁仓库
         if: inputs.virtualization_support != 'off'
